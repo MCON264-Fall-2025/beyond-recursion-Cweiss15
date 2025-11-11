@@ -9,7 +9,10 @@ public class RecursiveInsertLast implements InsertLastStrategy {
     public ListNode insertLast(ListNode head, int value) {
         // TODO: implement recursively.
         if(head == null) return new ListNode(value);
-        if(head.next == null) return new ListNode(value);
+
+        if(head.next == null) {
+            head.next = new ListNode(value);
+            return head;}
         head.next = insertLast(head.next, value);
         return head;
     }
