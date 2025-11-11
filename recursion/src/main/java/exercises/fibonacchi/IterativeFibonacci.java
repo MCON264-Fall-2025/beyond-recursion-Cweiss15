@@ -4,7 +4,17 @@ public class IterativeFibonacci implements FibonacciStrategy {
 
     @Override
     public long compute(int n) {
-        //TODO implement using iterative approach
+        // Use two accumulators (a,b) and a for-loop to n
+        if (n==0) return 0;
+        if (n==1) return 1;
+        long a = 0;
+        long b = 1;
+        for (int i=2; i<=n; i++) {
+            long temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
     }
 
 
